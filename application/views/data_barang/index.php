@@ -31,9 +31,9 @@ if ($this->session->flashdata('error')) {
                 <th scope="col">#</th>
                 <th scope="col">Kode Barang</th>
                 <th scope="col">Nama Instrumen/BHP</th>
-                <th scope="col">merk</th>
+                <th scope="col">Merk</th>
                 <th scope="col">Stok</th>
-                <th scope="col">Unit Cost</th>
+                <th scope="col">supplier Cost</th>
                 <th scope="col">Status</th>
                 <th scope="col">Opsi</th>
             </tr>

@@ -9,11 +9,11 @@
 <?= form_open(); ?>
 <div class="col-md-8">
     <div class="form-group row">
-        <label for="unit_pengirim" class="col-sm-3 col-form-label">Nama Unit Pengirim</label>
+        <label for="supplier_pengirim" class="col-sm-3 col-form-label">Nama supplier Pengirim</label>
         <div class="col-sm-9">
-            <input type="text" class="form-control form-control-sm <?= (form_error('unit_pengirim')) ? 'is-invalid' : ''; ?>" id="unit_pengirim" required autofocus name="unit_pengirim" placeholder="Unit Pengirim" value="<?= set_value('unit_pengirim'); ?>">
+            <input type="text" class="form-control form-control-sm <?= (form_error('supplier_pengirim')) ? 'is-invalid' : ''; ?>" id="supplier_pengirim" required autofocus name="supplier_pengirim" placeholder="supplier Pengirim" value="<?= set_value('supplier_pengirim'); ?>">
             <div class="invalid-feedback">
-                <?= form_error('unit_pengirim', '<p class="error-message">', '</p>'); ?>
+                <?= form_error('supplier_pengirim', '<p class="error-message">', '</p>'); ?>
             </div>
         </div>
     </div>

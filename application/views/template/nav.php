@@ -22,17 +22,21 @@
                 <li <?= (in_array(strtolower($this->uri->segment(1)), ['pegawai', 'tambah_pegawai', 'edit_pegawai'])) ? 'class="active"' : ''; ?>>
                     <a href="<?= site_url('pegawai'); ?>"><i class="fa fa-users"></i> Data Pegawai IST RSP</a>
                 </li>
-
+                
                 <li <?= (in_array(strtolower($this->uri->segment(1)), ['supplier', 'tambah_supplier', 'edit_supplier'])) ? 'class="active"' : ''; ?>>
                     <a href="<?= site_url('supplier'); ?>">
                         <i class="fa fa-truck"></i> DATA PENGIRIM BARANG </a>
+                        <li <?= (in_array(strtolower($this->uri->segment(1)), ['data_penjualan', 'tambah_penjualan', 'edit_penjualan'])) ? 'class="active"' : ''; ?>>
+                <a href="<?= site_url('data_penjualan'); ?>"><i class="fa fa-reply"></i>PERMINTAAN BARANG</a>
+                <li <?= (in_array(strtolower($this->uri->segment(1)), ['data_pembelian', 'tambah_pembelian', 'edit_pembelian'])) ? 'class="active"' : ''; ?>>
+                <a href="<?= site_url('data_pembelian'); ?>"><i class="fa fa-share"></i>PENGIRIMAN BARANG DAN PENAMBAHAN STOK</a>
+            </li>
                     </a>
-                </li>
-                <li <?= (in_array(strtolower($this->uri->segment(1)), ['stok_harian', 'stok_bulanan', 'stok_tahunan'])) ? 'class="active"' : ''; ?>>
+                </li>         </li>
+            <li <?= (in_array(strtolower($this->uri->segment(1)), ['stok_harian', 'stok_bulanan', 'stok_tahunan'])) ? 'class="active"' : ''; ?>>
                 <a href="#pageStokBarang" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     <i class="fa fa-file-text-o"></i> Laporan Stok Barang
                 </a>
-
                 <ul class="collapse list-unstyled" id="pageStokBarang">
                     <li <?= (strtolower($this->uri->segment(1)) == 'stok_harian') ? 'class="active"' : ''; ?>>
                         <a href="<?= site_url('stok_harian'); ?>">
@@ -54,9 +58,8 @@
 
             <li <?= (in_array(strtolower($this->uri->segment(1)), ['pembelian_harian', 'pembelian_bulanan', 'pembelian_tahunan'])) ? 'class="active"' : ''; ?>>
                 <a href="#pagePembelian" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                    <i class="fa fa-file-text-o"></i> Laporan Pembelian Barang
+                    <i class="fa fa-file-text-o"></i> Laporan Pengiriman Barang
                 </a>
-
                 <ul class="collapse list-unstyled" id="pagePembelian">
                     <li <?= (strtolower($this->uri->segment(1)) == 'pembelian_harian') ? 'class="active"' : ''; ?>>
                         <a href="<?= site_url('pembelian_harian'); ?>" <?= (strtolower($this->uri->segment(1)) == 'pembelian_harian') ? 'class="active"' : ''; ?>>
@@ -68,11 +71,16 @@
                             <i class="fa fa-angle-double-right"></i> Bulanan
                         </a>
                     </li>
+                    <li <?= (strtolower($this->uri->segment(1)) == 'stok_tahunan') ? 'class="active"' : ''; ?>>
+                        <a href="<?= site_url('stok_tahunan'); ?>">
+                            <i class="fa fa-angle-double-right"></i> Tahunan
+                        </a>
+                    </li>
                 </ul>
             </li>
 
             <li <?= (in_array(strtolower($this->uri->segment(1)), ['penjualan_harian', 'penjualan_bulanan'])) ? 'class="active"' : ''; ?>>
-                <a href="#pagePenjualan" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-file-text-o"></i> Laporan Penjualan Barang</a>
+                <a href="#pagePenjualan" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-file-text-o"></i> Laporan Permintaan Barang</a>
                 <ul class="collapse list-unstyled" id="pagePenjualan">
                     <li <?= (strtolower($this->uri->segment(1)) == 'penjualan_harian') ? 'class="active"' : ''; ?>>
                         <a href="<?= site_url('penjualan_harian'); ?>">
@@ -83,31 +91,35 @@
                         <a href="<?= site_url('penjualan_bulanan'); ?>">
                             <i class="fa fa-angle-double-right"></i> Bulanan
                         </a>
-            <?php
+                        </li>
+                    <li <?= (strtolower($this->uri->segment(1)) == 'stok_tahunan') ? 'class="active"' : ''; ?>>
+                        <a href="<?= site_url('stok_tahunan'); ?>">
+                            <i class="fa fa-angle-double-right"></i> Tahunan
+        
+                <?php
             endif;
             ?>
             <li <?= (in_array(strtolower($this->uri->segment(1)), ['data_pembelian', 'tambah_pembelian', 'edit_pembelian'])) ? 'class="active"' : ''; ?>>
                 <a href="<?= site_url('data_pembelian'); ?>"><i class="fa fa-share"></i>PENGIRIMAN BARANG</a>
             </li>
-
-            <li <?= (in_array(strtolower($this->uri->segment(1)), ['data_penjualan', 'tambah_penjualan', 'edit_penjualan'])) ? 'class="active"' : ''; ?>>
-                <a href="<?= site_url('data_penjualan'); ?>"><i class="fa fa-reply"></i>PERMINTAAN BARANG</a>
             </li>
-        
+                <li <?= (in_array(strtolower($this->uri->segment(1)), ['data_penjualan', 'tambah_penjualan', 'edit_penjualan'])) ? 'class="active"' : ''; ?>>
+                <a href="<?= site_url('data_penjualan'); ?>"><i class="fa fa-reply"></i>PERMINTAAN BARANG</a>
+                
+
+
+            
             <?php
             //tampilkan menu di bawah ini jika yang login pegawai
             if ($this->session->userdata('level') == 'pegawai') :
             ?>
                 <li <?= (in_array(strtolower($this->uri->segment(1)), ['stok_barang'])) ? 'class="active"' : ''; ?>>
                     <a href="<?= site_url('stok_barang'); ?>"><i class="fa fa-cubes"></i> Data Stok Barang</a>
-                </li>
+                
             <?php
             endif;
             ?>
 
-
-
-ooggh
                         </a>
                     </li>
                 </ul>

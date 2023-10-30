@@ -36,7 +36,7 @@ if ($this->session->flashdata('alert')) {
         <tr>
             <th scope="col">#</th>
             <th scope="col">ID Pengiriman</th>
-            <th scope="col">Unit Pengirim</th>
+            <th scope="col">supplier Pengirim</th>
             <th scope="col">Nama Barang</th>
             <th scope="col">Brand</th>
             <th scope="col" class="text-center">Qty</th>

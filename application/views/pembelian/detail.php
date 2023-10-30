@@ -22,7 +22,7 @@ function tanggal_indo($tgl)
 <hr class="mt-0" />
 <h6 class="mb-2">ID Pengiriman</h6>
 <p class="text-muted display-5 mt-1 mb-2">#<?= $d->id_pembelian; ?> ( <?= tanggal_indo($d->tgl_pembelian); ?> )</p>
-<h6 class="mb-1 mt-2">Unit Pengirim</h6>
+<h6 class="mb-1 mt-2">supplier Pengirim</h6>
 <p class="text-muted display-5 mt-1 mb-2"><?= $d->nama_supplier; ?></p>
 <h6 class="mb-1 mt-2">Operator</h6>
 <p class="text-muted display-5 mt-1 mb-4"><?= $d->fullname; ?></p>

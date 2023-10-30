@@ -2,7 +2,7 @@
 
 <div class="row">
     <div class="col-sm-12 col-md-10">
-        <h4 class="mb-0"><i class="fa fa-reply"></i> Data Penjualan Barang</h4>
+        <h4 class="mb-0"><i class="fa fa-reply"></i> Data Permintaan Barang</h4>
     </div>
     <div class="col-sm-12 col-md-2">
         <a href="<?= site_url('tambah_penjualan'); ?>" class="btn btn-success btn-sm btn-block">Tambah Data</a>
@@ -29,9 +29,9 @@ if ($this->session->flashdata('error')) {
         <thead class="thead-dark">
             <tr>
                 <th scope="col">#</th>
-                <th scope="col">ID Penjualan</th>
-                <th scope="col">Tanggal Penjualan</th>
-                <th scope="col">Nama Pembeli</th>
+                <th scope="col">ID Permintaan</th>
+                <th scope="col">Tanggal Permintaan</th>
+                <th scope="col">supplier Peminta</th>
                 <th scope="col">Jenis Barang</th>
                 <th scope="col">Total Harga</th>
                 <th scope="col">Petugas</th>

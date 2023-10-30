@@ -56,7 +56,7 @@ class Pembelian extends CI_Controller
 
             $this->form_validation->set_rules(
                 'supplier',
-                'Supplier',
+                'supplier',
                 'required|min_length[10]',
                 array(
                     'required' => '{field} wajib dipilih',
@@ -208,7 +208,7 @@ class Pembelian extends CI_Controller
 
             $this->form_validation->set_rules(
                 'supplier',
-                'Supplier',
+                'supplier',
                 'required|min_length[10]',
                 array(
                     'required' => '{field} wajib dipilih',

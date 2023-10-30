@@ -52,7 +52,7 @@
         </div>
     </div>
     <div class="form-group row">
-        <label for="jumlahx" class="col-sm-2 col-form-label">Jumlah Beli</label>
+        <label for="jumlahx" class="col-sm-2 col-form-label">Jumlah Barang</label>
         <div class="col-sm-2">
             <input type="text" class="form-control form-control-sm qty" id="jumlahx" placeholder="Jumlah Beli">
         </div>

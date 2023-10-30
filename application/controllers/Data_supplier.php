@@ -22,7 +22,7 @@ class Data_supplier extends CI_Controller
         $this->is_admin();
 
         $data = [
-            'title' => 'Data Supplier'
+            'title' => 'Data supplier'
         ];
 
         $this->template->kasir('supplier/index', $data);
@@ -36,7 +36,7 @@ class Data_supplier extends CI_Controller
             //validasi form
             $this->form_validation->set_rules(
                 'nama_supplier',
-                'Nama Supplier',
+                'Nama supplier',
                 "required|min_length[2]|max_length[100]|regex_match[/^[A-Z a-z.0-9']+$/]",
                 array(
                     'required' => '{field} wajib diisi',
@@ -90,7 +90,7 @@ class Data_supplier extends CI_Controller
                 $simpan = $this->m_supplier->save('tbl_supplier', $data_simpan);
 
                 if ($simpan) {
-                    $this->session->set_flashdata('success', 'Data Supplier berhasil ditambahkan..');
+                    $this->session->set_flashdata('success', 'Data supplier berhasil ditambahkan..');
 
                     redirect('supplier');
                 }
@@ -98,7 +98,7 @@ class Data_supplier extends CI_Controller
         }
 
         $data = [
-            'title' => 'Tambah Supplier'
+            'title' => 'Tambah supplier'
         ];
 
         $this->template->kasir('supplier/form_input', $data);
@@ -112,8 +112,8 @@ class Data_supplier extends CI_Controller
         if ($this->input->post('submit', TRUE) == 'submit') {
             //validasi form
             $this->form_validation->set_rules(
-                'idSupplier',
-                'ID Supplier',
+                'idsupplier',
+                'ID supplier',
                 'required|min_length[10]',
                 array(
                     'required' => '{field} wajib diisi',
@@ -123,7 +123,7 @@ class Data_supplier extends CI_Controller
 
             $this->form_validation->set_rules(
                 'nama_supplier',
-                'Nama Supplier',
+                'Nama supplier',
                 "required|min_length[2]|max_length[100]|regex_match[/^[A-Z a-z.0-9']+$/]",
                 array(
                     'required' => '{field} wajib diisi',
@@ -162,7 +162,7 @@ class Data_supplier extends CI_Controller
             //jika validasi berhasil maka lakukan proses penyimpanan
             if ($this->form_validation->run() == TRUE) {
                 //tampung data ke variabel
-                $idSupplier = $this->security->xss_clean($this->input->post('idSupplier', TRUE));
+                $idsupplier = $this->security->xss_clean($this->input->post('idsupplier', TRUE));
                 $nama = $this->security->xss_clean($this->input->post('nama_supplier', TRUE));
                 $telp = $this->security->xss_clean($this->input->post('hp', TRUE));
                 $alamat = $this->security->xss_clean($this->input->post('alamat', TRUE));
@@ -173,10 +173,10 @@ class Data_supplier extends CI_Controller
                     'telp' => $telp
                 ];
 
-                $up = $this->m_supplier->update('tbl_supplier', $data_update, ['id_supplier' => $idSupplier]);
+                $up = $this->m_supplier->update('tbl_supplier', $data_update, ['id_supplier' => $idsupplier]);
 
                 if ($up) {
-                    $this->session->set_flashdata('success', 'Data Supplier berhasil diperbarui..');
+                    $this->session->set_flashdata('success', 'Data supplier berhasil diperbarui..');
 
                     redirect('supplier');
                 }
@@ -194,7 +194,7 @@ class Data_supplier extends CI_Controller
         }
 
         $data = [
-            'title' => 'Edit Supplier',
+            'title' => 'Edit supplier',
             'data' => $getData->row()
         ];
 
@@ -210,7 +210,7 @@ class Data_supplier extends CI_Controller
             //validasi
             $this->form_validation->set_rules(
                 'id',
-                'ID Supplier',
+                'ID supplier',
                 "required|min_length[10]",
                 array(
                     'required' => '{field} tidak valid',

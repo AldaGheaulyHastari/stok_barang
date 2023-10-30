@@ -40,7 +40,7 @@
     </div>
 
     <div class="form-group row">
-        <label for="harga" class="col-sm-3 col-form-label">Unit Cost</label>
+        <label for="harga" class="col-sm-3 col-form-label">supplier Cost</label>
         <div class="col-sm-6">
             <input type="text" class="form-control form-control-sm uang <?= (form_error('harga')) ? 'is-invalid' : ''; ?>" id="harga" name="harga" placeholder="Harga Jual" value="<?= set_value('harga'); ?>">
             <div class="invalid-feedback">

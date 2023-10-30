@@ -26,7 +26,7 @@
         <label for="supplier" class="col-sm-2 col-form-label">Ruang Instalasi</label>
         <div class="col-sm-6">
             <select class="custom-select custom-select-sm supplier <?= (form_error('supplier')) ? 'is-invalid' : ''; ?>" id="supplier" name="supplier">
-                <option value="" disabled selected>Pilih Supplier</option>
+                <option value="" disabled selected>Pilih supplier</option>
                 <?php foreach ($supplier->result() as $s) : ?>
                     <option value="<?= $s->id_supplier; ?>">
                         <?= $s->nama_supplier; ?>
@@ -54,12 +54,12 @@
     <div class="form-group row">
         <label for="jumlahx" class="col-sm-2 col-form-label">Jumlah</label>
         <div class="col-sm-2">
-            <input type="number" class="form-control form-control-sm" id="jumlahx" placeholder="Jumlah Beli">
+            <input type="number" class="form-control form-control-sm" id="jumlahx" placeholder="Jumlah Barang">
         </div>
     </div>
     
 <div class="form-group row">
-        <label for="harga" class="col-sm-2 col-form-label">Unit Cost</label>
+        <label for="harga" class="col-sm-2 col-form-label">supplier Cost</label>
         <div class="col-sm-3">
             <input type="text" class="form-control form-control-sm uang" id="harga" placeholder="Harga Satuan">
         </div>

@@ -34,7 +34,7 @@ if ($this->session->flashdata('error')) {
                 <th scope="col">#</th>
                 <th scope="col">ID Pengiriman</th>
                 <th scope="col">Tanggal</th>
-                <th scope="col">Unit Instalasi</th>
+                <th scope="col">supplier Instalasi</th>
                 <th scope="col">Jumlah Jenis</th>
                 <th scope="col">Total</th>
                 <th scope="col">Petugas</th>

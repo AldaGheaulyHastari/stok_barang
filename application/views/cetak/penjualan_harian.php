@@ -40,7 +40,7 @@ function tanggal_indo($tgl)
                 if ($row == 1) :
                     echo '<td rowspan="' . $dt->row . '">' . $i++ . '</td>';
                     echo '<td rowspan="' . $dt->row . '">' . $dt->id_penjualan . '</td>';
-                    echo '<td rowspan="' . $dt->row . '">' . $dt->unit_peminta . '</td>';
+                    echo '<td rowspan="' . $dt->row . '">' . $dt->supplier_peminta . '</td>';
                 endif;
                 echo '<td>' . $dt->nama_barang . '</td>';
                 echo '<td>' . $dt->brand . '</td>';

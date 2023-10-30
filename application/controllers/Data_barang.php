@@ -220,7 +220,7 @@ class Data_barang extends CI_Controller
         }
 
         $data = [
-            'title' => ' Data Barang',
+            'title' => 'Edit Data Barang',
             'barang' => $barang->row()
         ];
 
@@ -322,7 +322,7 @@ class Data_barang extends CI_Controller
         }
     }
 
-    private function is_()
+    private function is_admin()
     {
         if (!$this->session->userdata('level') || $this->session->userdata('level') != 'admin') {
             redirect('dashboard');

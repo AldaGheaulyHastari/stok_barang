@@ -120,7 +120,7 @@ class CI_Loader {
 	 * @var	array
 	 */
 	protected $_ci_varmap =	array(
-		'unit_test' => 'unit',
+		'supplier_test' => 'supplier',
 		'user_agent' => 'agent'
 	);
 

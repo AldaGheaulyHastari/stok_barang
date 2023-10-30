@@ -38,17 +38,17 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /**
- * Unit Testing Class
+ * supplier Testing Class
  *
  * Simple testing class
  *
  * @package		CodeIgniter
  * @subpackage	Libraries
- * @category	UnitTesting
+ * @category	supplierTesting
  * @author		EllisLab Dev Team
- * @link		https://codeigniter.com/user_guide/libraries/unit_testing.html
+ * @link		https://codeigniter.com/user_guide/libraries/supplier_testing.html
  */
-class CI_Unit_test {
+class CI_supplier_test {
 
 	/**
 	 * Active flag
@@ -111,7 +111,7 @@ class CI_Unit_test {
 	 */
 	public function __construct()
 	{
-		log_message('info', 'Unit Testing Class Initialized');
+		log_message('info', 'supplier Testing Class Initialized');
 	}
 
 	// --------------------------------------------------------------------
@@ -198,7 +198,7 @@ class CI_Unit_test {
 		}
 
 		$CI =& get_instance();
-		$CI->load->language('unit_test');
+		$CI->load->language('supplier_test');
 
 		$this->_parse_template();
 
@@ -248,9 +248,9 @@ class CI_Unit_test {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Make Unit testing active
+	 * Make supplier testing active
 	 *
-	 * Enables/disables unit testing
+	 * Enables/disables supplier testing
 	 *
 	 * @param	bool
 	 * @return	void
@@ -273,7 +273,7 @@ class CI_Unit_test {
 	public function result($results = array())
 	{
 		$CI =& get_instance();
-		$CI->load->language('unit_test');
+		$CI->load->language('supplier_test');
 
 		if (count($results) === 0)
 		{
