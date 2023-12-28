@@ -53,7 +53,7 @@ $route['default_controller'] = 'home';
 $route['dashboard'] = 'home/dashboard';
 $route['sign_out'] = 'home/sign_out';
 $route['login'] = 'home';
-$route['admin'] = 'home/profil_admin';
+$route['admin'] = 'home/profil_admin'; 
 $route['profil'] = 'home/profil_pegawai';
 $route['password'] = 'home/ganti_password';
 

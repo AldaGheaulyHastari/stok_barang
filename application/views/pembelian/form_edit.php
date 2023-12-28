@@ -2,7 +2,7 @@
 
 <div class="row">
     <div class="col-sm-12 col-md-10">
-        <h4 class="mb-0"><i class="fa fa-share"></i> Edit Data Pembelian Barang</h4>
+        <h4 class="mb-0"><i class="fa fa-share"></i> Edit Data Permintaan Barang</h4>
     </div>
 </div>
 <hr class="mt-0" />
@@ -15,7 +15,7 @@
 <input type="hidden" name="idP" value="<?= $fdata->id_pembelian; ?>">
 <div class="col-md-12">
     <div class="form-group row">
-        <label for="tanggal" class="col-sm-2 col-form-label">Tanggal Pembelian</label>
+        <label for="tanggal" class="col-sm-2 col-form-label">Tanggal Permintaan</label>
         <div class="col-sm-3">
             <input type="text" class="form-control form-control-sm <?= (form_error('tanggal')) ? 'is-invalid' : ''; ?>" name="tanggal" id="date-picker" value="<?= (set_value('tanggal')) ? set_value('tanggal') : date('d/m/Y', strtotime($fdata->tgl_pembelian)); ?>">
             <div class="invalid-feedback">

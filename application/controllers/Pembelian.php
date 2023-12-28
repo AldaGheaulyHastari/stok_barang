@@ -25,7 +25,7 @@ class Pembelian extends CI_Controller
         $this->cart->destroy();
 
         $data = [
-            'title' => 'Data Pembelian Barang'
+            'title' => 'Data Permintaan Barang'
         ];
 
         $this->template->kasir('pembelian/index', $data);
@@ -46,7 +46,7 @@ class Pembelian extends CI_Controller
             //validasi input data tanggal
             $this->form_validation->set_rules(
                 'tanggal',
-                'Tanggal Pembelian',
+                'Tanggal Pengiriman',
                 'required|callback_checkDateFormat',
                 array(
                     'required' => '{field} wajib diisi',
@@ -198,7 +198,7 @@ class Pembelian extends CI_Controller
             //validasi input data tanggal
             $this->form_validation->set_rules(
                 'tanggal',
-                'Tanggal Pembelian',
+                'Tanggal Pengiriman',
                 'required|callback_checkDateFormat',
                 array(
                     'required' => '{field} wajib diisi',
@@ -581,7 +581,8 @@ class Pembelian extends CI_Controller
                 $row = array();
                 $row[] = $no;
                 $row[] = $i->id_pembelian;
-                $row[] = $this->tanggal_indo($i->tgl_pembelian);
+                // $row[] = $this->tanggal_indo($i->tgl_pembelian);
+                $row[] = ($i->tgl_pembelian != '') ? date('d/m/Y - H:i:s', strtotime($i->tgl_pembelian)) : '';
                 $row[] = $i->nama_supplier;
                 $row[] = $i->jumlah;
                 $row[] = '<span class="pr-3">' . number_format($i->total, 0, ',', '.') . ',-</span>';

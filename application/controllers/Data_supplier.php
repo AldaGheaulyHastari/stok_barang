@@ -71,7 +71,18 @@ class Data_supplier extends CI_Controller
                     'regex_match' => 'Data {field} yang anda masukkan tidak valid'
                 )
             );
-
+            
+            //validasi input data tanggal
+            $this->form_validation->set_rules(
+                'waktu',
+                'Waktu Pengiriman',
+                'required|callback_checkDateFormat',
+                array(
+                    'required' => '{field} wajib diisi',
+                    'checkDateFormat' => '{field} tidak valid'
+                )
+            );
+            
             //jika validasi berhasil maka lakukan proses penyimpanan
             if ($this->form_validation->run() == TRUE) {
                 //tampung data ke variabel
@@ -79,12 +90,14 @@ class Data_supplier extends CI_Controller
                 $nama = $this->security->xss_clean($this->input->post('nama_supplier', TRUE));
                 $telp = $this->security->xss_clean($this->input->post('hp', TRUE));
                 $alamat = $this->security->xss_clean($this->input->post('alamat', TRUE));
+                $waktu = date('Y-m-d', strtotime(str_replace('/', '-', $this->security->xss_clean($this->input->post('waktu', TRUE)))));
 
                 $data_simpan = [
                     'id_supplier' => $id,
                     'nama_supplier' => $nama,
                     'alamat' => $alamat,
-                    'telp' => $telp
+                    'telp' => $telp,
+                    'waktu' => $telp
                 ];
 
                 $simpan = $this->m_supplier->save('tbl_supplier', $data_simpan);
@@ -159,6 +172,16 @@ class Data_supplier extends CI_Controller
                 )
             );
 
+            $this->form_validation->set_rules(
+                'waktu',
+                'Waktu Pengiriman',
+                'required|callback_checkDateFormat',
+                array(
+                    'required' => '{field} wajib diisi',
+                    'checkDateFormat' => '{field} tidak valid'
+                )
+            );
+
             //jika validasi berhasil maka lakukan proses penyimpanan
             if ($this->form_validation->run() == TRUE) {
                 //tampung data ke variabel
@@ -166,11 +189,14 @@ class Data_supplier extends CI_Controller
                 $nama = $this->security->xss_clean($this->input->post('nama_supplier', TRUE));
                 $telp = $this->security->xss_clean($this->input->post('hp', TRUE));
                 $alamat = $this->security->xss_clean($this->input->post('alamat', TRUE));
+                $waktu = date('Y-m-d', strtotime(str_replace('/', '-', $this->security->xss_clean($this->input->post('waktu', TRUE)))));
+
 
                 $data_update = [
                     'nama_supplier' => $nama,
                     'alamat' => $alamat,
-                    'telp' => $telp
+                    'telp' => $telp,
+                    'waktu' => $waktu
                 ];
 
                 $up = $this->m_supplier->update('tbl_supplier', $data_update, ['id_supplier' => $idsupplier]);
@@ -257,6 +283,7 @@ class Data_supplier extends CI_Controller
                 $row[] = $i->nama_supplier;
                 $row[] = $i->alamat;
                 $row[] = ($i->telp != '') ? $i->telp : '-';
+                $row[] = ($i->waktu != '') ? date('d/m/Y - H:i:s', strtotime($i->waktu)) : '';
                 $row[] = '<a href="' . site_url('supplier/' . $i->id_supplier) . '" class="btn btn-warning btn-sm text-white">Edit</a>
                 <button type="button" class="btn btn-danger btn-sm"onclick="hapus_supplier(\'' . $i->id_supplier . '\')">Hapus</button>';
 

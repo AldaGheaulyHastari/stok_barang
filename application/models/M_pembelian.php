@@ -13,7 +13,7 @@ class M_pembelian extends CI_Model
 
     var $column_order    =  array(null, 'p.id_pembelian', 'tgl_pembelian', 'nama_supplier', 'jumlah', 'total', 'fullname', null); //set column field database untuk datatable order
     var $column_search   =  array('p.id_pembelian', 'tgl_pembelian', 'fullname', 'nama_supplier'); //set column field database untuk datatable search
-    var $order = array('p.id_pembelian' => 'asc'); // default order
+    var $order = array('p.id_pembelian' => 'desc'); // default order
 
     function __construct()
     {

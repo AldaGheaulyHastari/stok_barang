@@ -33,6 +33,7 @@ if ($this->session->flashdata('error')) {
                 <th scope="col">supplier Pengirim</th>
                 <th scope="col">Penanggung Jawab</th>
                 <th scope="col">Telp</th>
+                <th scope="col">Waktu Pengiriman</th>
                 <th scope="col">Opsi</th>
             </tr>
         </thead>

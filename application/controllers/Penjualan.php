@@ -56,7 +56,7 @@ class Penjualan extends CI_Controller
 
             $this->form_validation->set_rules(
                 'pembeli',
-                'Nama Pembeli',
+                'Nama Peminta',
                 "required|min_length[3]|max_length[30]|regex_match[/^[A-Z a-z.']+$/]",
                 array(
                     'required' => '{field} wajib diisi',
@@ -205,7 +205,7 @@ class Penjualan extends CI_Controller
 
             $this->form_validation->set_rules(
                 'pembeli',
-                'Nama Pembeli',
+                'Nama Peminta',
                 "required|min_length[3]|max_length[30]|regex_match[/^[A-Z a-z.']+$/]",
                 array(
                     'required' => '{field} wajib diisi',
@@ -263,7 +263,7 @@ class Penjualan extends CI_Controller
                     //kosongkan cart
                     $this->cart->destroy();
                     //buat notifikasi penyimpanan berhasil
-                    $this->session->set_flashdata('success', 'Data pembelian berhasil diperbarui...');
+                    $this->session->set_flashdata('success', 'Data Permintaan berhasil diperbarui...');
 
                     redirect('data_penjualan');
                 }
@@ -724,7 +724,7 @@ class Penjualan extends CI_Controller
                 $row = array();
                 $row[] = $no;
                 $row[] = $i->id_penjualan;
-                $row[] = $this->tanggal_indo($i->tgl_penjualan);
+                $row[] = ($i->tgl_penjualan != '') ? date('d/m/Y - H:i:s', strtotime($i->tgl_penjualan)) : '';
                 $row[] = $i->nama_pembeli;
                 $row[] = $i->jumlah;
                 $row[] = '<span class="pr-3">' . number_format($i->total, 0, ',', '.') . ',-</span>';

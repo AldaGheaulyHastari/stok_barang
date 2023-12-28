@@ -5,7 +5,7 @@ function tanggal_indo($tgl)
 {
     $bulan  = [1 => 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
 
-    $exp    = explode('-', date('d-m-Y', strtotime($tgl)));
+    $exp    = explode('-', date('d-m-Y - H:i:s', strtotime($tgl)));
 
     return $exp[0] . ' ' . $bulan[(int) $exp[1]] . ' ' . $exp[2];
 }
@@ -13,7 +13,7 @@ function tanggal_indo($tgl)
 
 <img src="<?= base_url('assets/img/cetak.jpg'); ?>" class="cetak" />
 <h6 class="display-5 text-center mt-2 mb-0">Laporan Harian Stok Barang</h6>
-<p class="text-center display-6 mt-0"><?= tanggal_indo($tanggal); ?></p>
+<p class="text-center display-6 mt-0"><?= tanggal_indo($tanggal)?></p>
 <hr class="mt-0" />
 <table class="table table-sm table-bordered table-striped mt-3">
     <thead>
@@ -23,8 +23,8 @@ function tanggal_indo($tgl)
             <th scope="col">Nama Barang</th>
             <th scope="col">Brand</th>
             <th scope="col" class="text-center">Stok Barang</th>
-            <th scope="col" class="text-center">Qty Penjualan</th>
-            <th scope="col" class="text-center">Qty Pembelian</th>
+            <th scope="col" class="text-center">Qty Permintaan</th>
+            <th scope="col" class="text-center">Qty Pengiriman</th>
         </tr>
     </thead>
     <tbody>

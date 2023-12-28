@@ -24,9 +24,9 @@
         </div>
     </div>
     <div class="form-group row">
-        <label for="pembeli" class="col-sm-2 col-form-label">Nama Pembeli</label>
+        <label for="pembeli" class="col-sm-2 col-form-label">Nama Peminta</label>
         <div class="col-sm-6">
-            <input type="text" name="pembeli" id="pembeli" class="form-control form-control-sm <?= (form_error('pembeli')) ? 'is-invalid' : ''; ?>" placeholder="Nama Pembeli" value="<?= (set_value('pembeli')) ? set_value('pembeli') : $fdata->nama_pembeli; ?>">
+            <input type="text" name="pembeli" id="pembeli" class="form-control form-control-sm <?= (form_error('pembeli')) ? 'is-invalid' : ''; ?>" placeholder="Nama Peminta" value="<?= (set_value('pembeli')) ? set_value('pembeli') : $fdata->nama_pembeli; ?>">
             <div class="invalid-feedback">
                 <?= form_error('pembeli', '<p class="error-message">', '</p>'); ?>
             </div>
@@ -54,7 +54,7 @@
     <div class="form-group row">
         <label for="jumlahx" class="col-sm-2 col-form-label">Jumlah Barang</label>
         <div class="col-sm-2">
-            <input type="text" class="form-control form-control-sm qty" id="jumlahx" placeholder="Jumlah Beli">
+            <input type="text" class="form-control form-control-sm qty" id="jumlahx" placeholder="Jumlah Barang">
         </div>
     </div>
     <div class="form-group row">

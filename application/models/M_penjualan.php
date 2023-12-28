@@ -12,7 +12,7 @@ class M_penjualan extends CI_Model
 
     var $column_order    =  array(null, 'p.id_penjualan', 'tgl_penjualan', 'nama_pembeli', 'jumlah', 'total', 'fullname', null); //set column field database untuk datatable order
     var $column_search   =  array('p.id_penjualan', 'tgl_penjualan', 'nama_pembeli', 'fullname'); //set column field database untuk datatable search
-    var $order = array('p.id_penjualan' => 'asc'); // default order
+    var $order = array('p.id_penjualan' => 'desc'); // default order
 
     function __construct()
     {

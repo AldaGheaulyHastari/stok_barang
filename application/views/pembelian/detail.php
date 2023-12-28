@@ -69,7 +69,7 @@ function tanggal_indo($tgl)
             </tr>
         <?php endforeach; ?>
         <tr>
-            <td colspan="6" class="text-center"><b>Biaya Total Pembelian</b></td>
+            <td colspan="6" class="text-center"><b>Biaya Total Permintaan</b></td>
             <td>
                 <b>
                     <span class="float-left">Rp.</span>

@@ -14,7 +14,7 @@
 <?= form_open(); ?>
 <div class="col-md-12">
     <div class="form-group row">
-        <label for="tanggal" class="col-sm-2 col-form-label">Tanggal Pembelian</label>
+        <label for="tanggal" class="col-sm-2 col-form-label">Tanggal Permintaan</label>
         <div class="col-sm-3">
             <input type="text" class="form-control form-control-sm <?= (form_error('tanggal')) ? 'is-invalid' : ''; ?>" name="tanggal" id="date-picker" value="<?= (set_value('tanggal')) ? set_value('tanggal') : date('d/m/Y'); ?>">
             <div class="invalid-feedback">
@@ -26,7 +26,7 @@
         <label for="supplier" class="col-sm-2 col-form-label">Ruang Instalasi</label>
         <div class="col-sm-6">
             <select class="custom-select custom-select-sm supplier <?= (form_error('supplier')) ? 'is-invalid' : ''; ?>" id="supplier" name="supplier">
-                <option value="" disabled selected>Pilih supplier</option>
+                <option value="" disabled selected>Pilih Ruangan</option>
                 <?php foreach ($supplier->result() as $s) : ?>
                     <option value="<?= $s->id_supplier; ?>">
                         <?= $s->nama_supplier; ?>
